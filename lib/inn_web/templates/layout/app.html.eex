@@ -17,17 +17,6 @@
           <a href="/" class="brand-logo">
             Чекер ИНН
           </a>
-          <div class="right">
-            <%= if @conn.assigns[:user] do %>
-
-                <%= link "Выйти", to: Routes.auth_path(@conn, :signout) %>
-
-            <% else %>
-
-              <%= link "Авторизация", to: Routes.auth_path(@conn, :request, "github") %>
-
-            <% end %>
-          </div>
           </div>
       </nav>
     </header>

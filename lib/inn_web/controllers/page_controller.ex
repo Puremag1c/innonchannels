@@ -52,9 +52,7 @@ defmodule InnWeb.PageController do
 
 # кладет корректные данные в базу
     def final(conn, params) do
-      changeset = conn.assigns.user
-      |> Ecto.build_assoc(:inns)
-      |> Inn.Number.changeset(params)
+      changeset = Inn.Number.changeset(%Inn.Number{}, params)
 
       case Inn.Repo.insert(changeset) do
         {:ok, _number} ->
